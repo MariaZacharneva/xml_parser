@@ -1,0 +1,3 @@
+C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/CMakeFiles/xml_parser.dir
+C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
