@@ -5,15 +5,21 @@
 #include <string>
 #include <vector>
 
+enum XmlTagType {
+    Closing, Opening, Empty, Undefined,
+};
+
 struct XmlAttribute {
     std::string name;
     std::string value;
+    bool last = false;
 };
 
 struct XmlTag {
     std::string name;
     std::string text;
-    bool empty = false;
+    XmlTagType type = Undefined;
+
     std::vector<XmlAttribute> attributes;
     std::vector<XmlTag> nested_tags;
 };
