@@ -11,11 +11,20 @@
 
 class Parser {
 public:
-    Parser(const std::string& xml_input_path) {}
-    void LoadTag(const XmlTag& opening_tag) {};
-    void LoadText(const std::string& text) {};
-};
+    Parser(const std::string &xml_input_path);
 
+    ~Parser() { delete root_tag_; }
+
+    void LoadTag(const XmlTag &tag);
+
+    void LoadText(const std::string &text);
+
+    [[nodiscard]] XmlTag *GetRoot() const { return root_tag_; }
+
+private:
+    XmlTag *root_tag_ = nullptr;
+    XmlTag *curr_tag_ = nullptr;
+};
 
 
 #endif //PARSER_H

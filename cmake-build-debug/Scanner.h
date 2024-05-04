@@ -13,8 +13,8 @@
 
 class Scanner {
 public:
-    Scanner(const std::string &xml_input_file) : _xml_input_path(xml_input_file),
-                                                 fin(xml_input_file, std::fstream::in), _curr_symbol(new char(0)) {
+    Scanner(const std::string &xml_input_file) : xml_input_path_(xml_input_file),
+                                                 fin_(xml_input_file, std::fstream::in), curr_symbol_(new char(0)) {
     }
 
     XmlTag ReadTag();
@@ -28,11 +28,14 @@ private:
     void ReadSymbol();
     void SkipEmpty();
     static bool IsSymbolAllowed(char s);
+    static bool IsSymbolAllowedInTextFields(char s);
 
-    std::string _xml_input_path;
-    std::fstream fin;
-    char *_curr_symbol;
-    bool can_read_file = true;
+    std::string xml_input_path_;
+    std::fstream fin_;
+    int line_ = 1;
+    int pos_ = 1;
+    char *curr_symbol_;
+    bool can_read_file_ = true;
 };
 
 

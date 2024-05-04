@@ -15,13 +15,20 @@ struct XmlAttribute {
     bool last = false;
 };
 
-struct XmlTag {
+class XmlTag {
+public:
+    ~XmlTag() {
+        for (XmlTag* child : nested_tags) {
+            delete child;
+        }
+    }
     std::string name;
     std::string text;
     XmlTagType type = Undefined;
 
     std::vector<XmlAttribute> attributes;
-    std::vector<XmlTag> nested_tags;
+    std::vector<XmlTag*> nested_tags;
+    XmlTag* parent_tag = nullptr;
 };
 
 #endif  // XML_CLASSES_H

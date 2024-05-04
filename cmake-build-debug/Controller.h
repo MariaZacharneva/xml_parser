@@ -6,36 +6,46 @@
 #define CONTROLLER_H
 #include <memory>
 
+#include "CSharpGenerator.h"
+#include "CustomException.h"
 #include "Parser.h"
 #include "Scanner.h"
 
 
 class Controller {
 public:
-    Controller(const std::string &xml_input_path) {
-        _parser = std::make_unique<Parser>(xml_input_path);
-        _scanner = std::make_unique<Scanner>(xml_input_path);
+    Controller(const std::string &xml_input_path, const std::string &output_path) {
+        parser_ = std::make_unique<Parser>(xml_input_path);
+        scanner_ = std::make_unique<Scanner>(xml_input_path);
+        generator_ = std::make_unique<CSharpGenerator>(output_path);
     }
 
     void Run() {
-        _can_read_file = _scanner->CanReadFile();
-        while (_can_read_file) {
-            auto tag = _scanner->ReadTag();
-            _parser->LoadTag(tag);
-            _can_read_file = _scanner->CanReadFile();
-            if (!_can_read_file) {
-                break;
+        try {
+            can_read_file_ = scanner_->CanReadFile();
+            while (can_read_file_) {
+                auto tag = scanner_->ReadTag();
+                parser_->LoadTag(tag);
+                can_read_file_ = scanner_->CanReadFile();
+                if (!can_read_file_) {
+                    break;
+                }
+                std::string text = scanner_->ReadText();
+                parser_->LoadText(text);
+                can_read_file_ = scanner_->CanReadFile();
             }
-            std::string text = _scanner->ReadText();
-            _parser->LoadText(text);
-            _can_read_file = _scanner->CanReadFile();
+            generator_->AnalyzeTagTree(parser_->GetRoot());
+            generator_->GenerateCode();
+        } catch (CustomException& error) {
+            std::cout << "AN ERROR OCCURED.\n" << error.what() << std::endl;
         }
     }
 
 private:
-    std::unique_ptr<Parser> _parser;
-    std::unique_ptr<Scanner> _scanner;
-    bool _can_read_file = true;
+    std::unique_ptr<Parser> parser_;
+    std::unique_ptr<Scanner> scanner_;
+    std::unique_ptr<CSharpGenerator> generator_;
+    bool can_read_file_ = true;
 };
 
 

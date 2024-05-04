@@ -73,6 +73,12 @@ build CMakeFiles/xml_parser.dir/Parser.cpp.obj: CXX_COMPILER__xml_parser_unscann
   OBJECT_DIR = CMakeFiles\xml_parser.dir
   OBJECT_FILE_DIR = CMakeFiles\xml_parser.dir
 
+build CMakeFiles/xml_parser.dir/CSharpGenerator.cpp.obj: CXX_COMPILER__xml_parser_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/CSharpGenerator.cpp || cmake_object_order_depends_target_xml_parser
+  DEP_FILE = CMakeFiles\xml_parser.dir\CSharpGenerator.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\xml_parser.dir
+  OBJECT_FILE_DIR = CMakeFiles\xml_parser.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target xml_parser
@@ -81,7 +87,7 @@ build CMakeFiles/xml_parser.dir/Parser.cpp.obj: CXX_COMPILER__xml_parser_unscann
 #############################################
 # Link the executable xml_parser.exe
 
-build xml_parser.exe: CXX_EXECUTABLE_LINKER__xml_parser_Debug CMakeFiles/xml_parser.dir/main.cpp.obj CMakeFiles/xml_parser.dir/Controller.cpp.obj CMakeFiles/xml_parser.dir/Scanner.cpp.obj CMakeFiles/xml_parser.dir/Parser.cpp.obj
+build xml_parser.exe: CXX_EXECUTABLE_LINKER__xml_parser_Debug CMakeFiles/xml_parser.dir/main.cpp.obj CMakeFiles/xml_parser.dir/Controller.cpp.obj CMakeFiles/xml_parser.dir/Scanner.cpp.obj CMakeFiles/xml_parser.dir/Parser.cpp.obj CMakeFiles/xml_parser.dir/CSharpGenerator.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\xml_parser.dir

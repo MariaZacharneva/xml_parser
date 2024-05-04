@@ -11,5 +11,7 @@ add_executable(xml_parser main.cpp
         cmake-build-debug/Parser.cpp
         cmake-build-debug/Parser.h
         cmake-build-debug/XmlClasses.h
-        cmake-build-debug/helpers.h
+        cmake-build-debug/CustomException.h
+        cmake-build-debug/CSharpGenerator.cpp
+        cmake-build-debug/CSharpGenerator.h
 )
