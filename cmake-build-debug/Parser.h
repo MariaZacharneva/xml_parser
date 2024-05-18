@@ -4,10 +4,15 @@
 
 #ifndef PARSER_H
 #define PARSER_H
+#include <queue>
 #include <string>
 
+#include "Scanner.h"
 #include "XmlClasses.h"
 
+enum Stage {
+    BuildingOpeningTag,
+};
 
 class Parser {
 public:
@@ -15,13 +20,20 @@ public:
 
     ~Parser() { delete root_tag_; }
 
-    void LoadTag(const XmlTag &tag);
+    void ParseTag();
 
-    void LoadText(const std::string &text);
+    void ParseAttribute(XmlTag* tag, Token* token);
+
+    void LoadScanner(Scanner* scanner);
+
+    void AddTagToTree(const XmlTag &tag);
+
+    void AddTextToTree(const std::string &text);
 
     [[nodiscard]] XmlTag *GetRoot() const { return root_tag_; }
 
 private:
+    Scanner* scanner_;
     XmlTag *root_tag_ = nullptr;
     XmlTag *curr_tag_ = nullptr;
 };

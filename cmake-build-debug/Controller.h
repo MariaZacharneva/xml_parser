@@ -7,7 +7,7 @@
 #include <memory>
 
 #include "CSharpGenerator.h"
-#include "CustomException.h"
+#include "XMLParserExceptions.h"
 #include "Parser.h"
 #include "Scanner.h"
 
@@ -21,22 +21,17 @@ public:
     }
 
     void Run() {
+        parser_->LoadScanner(scanner_.get());
         try {
             can_read_file_ = scanner_->CanReadFile();
             while (can_read_file_) {
-                auto tag = scanner_->ReadTag();
-                parser_->LoadTag(tag);
-                can_read_file_ = scanner_->CanReadFile();
-                if (!can_read_file_) {
-                    break;
-                }
-                std::string text = scanner_->ReadText();
-                parser_->LoadText(text);
+                parser_->ParseTag();
                 can_read_file_ = scanner_->CanReadFile();
             }
             generator_->AnalyzeTagTree(parser_->GetRoot());
             generator_->GenerateCode();
-        } catch (CustomException& error) {
+        } catch (std::exception& error) {
+            // Different handling of differnet expections can be added if necessary.
             std::cout << "AN ERROR OCCURED.\n" << error.what() << std::endl;
         }
     }

@@ -1,15 +1,16 @@
 <root>
     <newman Name="John" Surname="Newman" BirthDate="1990-01-01">
-        <mother>
-            <newmanmother Name="Ann" Surname="Brown" BirthDate="1970-02-02"/>
-        </mother>
-        <father>
-            <newmanfather Name="Joseph" Surname="Newman" BirthDate="1967-12-24"/>
-        </father>
+        <mother Name="Ann" Surname="Brown" BirthDate="1970-02-02"/>
     </newman>
-    <novak Name="Matt" Surname="Novak" BirthDate="2005-11-16"/>
+    <novak Name="Matt" Surname="Novak" BirthDate="2005-11-16">
+        <father Name="Henry" Surname="Black" BirthDate="1970-02-02"/>
+    </novak>
     <cats>
         <tom Name="Tom" Companion="Jerry"/>
         <garfield Name="Garfield" Companion="Odie"/>
     </cats>
+    <dogs>
+        <tom Name="Tom" Owner="John">Bark!</tom>
+        <jimmy Name="Jimmy" Owner="Ann">Bark bark!</jimmy>
+    </dogs>
 </root>

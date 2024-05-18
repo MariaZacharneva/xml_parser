@@ -5,94 +5,50 @@
 #include "Scanner.h"
 
 #include <set>
+#include <iostream>
 
-#include "CustomException.h"
+#include "XMLParserExceptions.h"
 
 void debug(const std::string &msg) {
     std::cout << "------- " << msg << std::endl;
 }
 
-XmlTag Scanner::ReadTag() {
-    SkipEmpty();
-    if (*curr_symbol_ != '<') {
-        throw CustomException(kScannerException, "XML file should start with a root tag.");
-    }
-    XmlTag tag;
-    ReadSymbol();
-    if (*curr_symbol_ == '/') {
-        tag.type = Closing;
+Token Scanner::ReadNextToken() {
+    if (*curr_symbol_ == '<') {
         ReadSymbol();
-    } else {
-        tag.type = Opening;
+        return {Token::OpeningBracket};
     }
-    while (isalpha(*curr_symbol_)) {
-        tag.name.push_back(*curr_symbol_);
+    if (*curr_symbol_ == '>') {
         ReadSymbol();
-    }
-    if (tag.name.empty()) {
-        throw CustomException(kScannerException, "Tag name cannot be empty.", line_, pos_);
-    }
-    SkipEmpty();
-    while (isalpha(*curr_symbol_)) {
-        XmlAttribute attr = ReadAttribute();
-        tag.attributes.push_back(attr);
+        return {Token::ClosingBracket};
     }
     if (*curr_symbol_ == '/') {
-        if (tag.type == Closing) {
-            throw CustomException(kScannerException, "Wrong symbol. Closing tag cannot end with '/>'.", line_, pos_);
-        }
-        tag.type = Empty;
         ReadSymbol();
+        return {Token::Slash};
     }
-    if (*curr_symbol_ != '>') {
-        throw CustomException(kScannerException, "Wrong symbol. Tag should be closed with '>'.", line_, pos_);
-    }
-    ReadSymbol();
-    debug("read tag " + tag.name);
-    return tag;
-}
-
-XmlAttribute Scanner::ReadAttribute() {
-    SkipEmpty();
-    XmlAttribute attribute;
-    while (isalpha(*curr_symbol_)) {
-        attribute.name.push_back(*curr_symbol_);
+    if (*curr_symbol_ == '"') {
         ReadSymbol();
+        return {Token::Quote};
     }
-    if (*curr_symbol_ != '=') {
-        throw CustomException(kScannerException, "Attribute should have a value.", line_, pos_);
-    }
-    ReadSymbol();
-    if (*curr_symbol_ != '"') {
-        throw CustomException(kScannerException, "Attribute value should be defined.", line_, pos_);
-    }
-    ReadSymbol();
-    while (*curr_symbol_ != '"') {
-        if (!IsSymbolAllowedInTextFields(*curr_symbol_)) {
-            throw CustomException(kScannerException,
-                                  "Symbol '" + std::to_string(*curr_symbol_) + "' is not allowed in attribute value.",
-                                  line_, pos_);
-        }
-        attribute.value.push_back(*curr_symbol_);
+    if (*curr_symbol_ == '=') {
         ReadSymbol();
+        return {Token::EqualSign};
     }
-    ReadSymbol();
+    std::string space_content;
     while (isspace(*curr_symbol_)) {
+        space_content += *curr_symbol_;
         ReadSymbol();
     }
-    debug("read attribute " + attribute.name);
-    return attribute;
-}
 
-std::string Scanner::ReadText() {
-    SkipEmpty();
-    std::string text;
+    if (!space_content.empty()) {
+        return {Token::Space, space_content};
+    }
+    std::string content;
     while (IsSymbolAllowedInTextFields(*curr_symbol_)) {
-        text.push_back(*curr_symbol_);
+        content += *curr_symbol_;
         ReadSymbol();
     }
-    debug("read text " + text);
-    return text;
+    return {Token::String, content};
 }
 
 bool Scanner::CanReadFile() {
@@ -102,7 +58,7 @@ bool Scanner::CanReadFile() {
 
 void Scanner::ReadSymbol() {
     if (!can_read_file_) {
-        throw CustomException(kScannerException, "There are no more content in the file.", line_, pos_);
+        throw ScannerException("There are no more content in the file.", line_, pos_);
     }
     if (fin_ >> std::noskipws >> *curr_symbol_) {
         can_read_file_ = true;
@@ -116,8 +72,8 @@ void Scanner::ReadSymbol() {
             std::cout << *curr_symbol_;
             std::string symbol;
             symbol = *curr_symbol_;
-            throw CustomException(kScannerException, "Symbol '" + symbol + "' is not allowed",
-                                  line_, pos_);
+            throw ScannerException("Symbol '" + symbol + "' is not allowed",
+                                   line_, pos_);
         }
     } else {
         can_read_file_ = false;
@@ -132,12 +88,12 @@ void Scanner::SkipEmpty() {
 }
 
 bool Scanner::IsSymbolAllowed(char s) {
-    std::set<char> allowed = {'-', '_', '/', '+', '-', '(', ')','!','?', '<', '>', '/', '=', '"', };
+    std::set<char> allowed = {'-', '_', '/', '+', '-', '(', ')', '!', '?', '<', '>', '/', '=', '"',};
     return isalpha(s) || isdigit(s) || isspace(s)
            || allowed.find(s) != allowed.end();
 }
 
 bool Scanner::IsSymbolAllowedInTextFields(char s) {
-    std::set<char> allowed = {'-', '_', '/', '+', '-', '(', ')','!','?', ' ',};
+    std::set<char> allowed = {'-', '_', '/', '+', '-', '(', ')', '!', '?',};
     return isalpha(s) || isdigit(s) || (allowed.find(s) != allowed.end());
 }

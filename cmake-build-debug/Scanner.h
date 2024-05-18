@@ -17,17 +17,17 @@ public:
                                                  fin_(xml_input_file, std::fstream::in), curr_symbol_(new char(0)) {
     }
 
-    XmlTag ReadTag();
-
-    XmlAttribute ReadAttribute();
-
-    std::string ReadText();
+    Token ReadNextToken();
 
     bool CanReadFile();
+
 private:
     void ReadSymbol();
+
     void SkipEmpty();
+
     static bool IsSymbolAllowed(char s);
+
     static bool IsSymbolAllowedInTextFields(char s);
 
     std::string xml_input_path_;
