@@ -1,0 +1,7 @@
+<root>
+<queue To="Shop">
+<man1 Name="Jan">Hello</man1>
+<man2 Name="Pawel">Hi</man2>
+<man3 Name="TheSecond" Surname="Pope">Good day!</man3>
+</queue>
+</root>

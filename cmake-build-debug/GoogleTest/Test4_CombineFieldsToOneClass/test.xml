@@ -1,0 +1,8 @@
+<root>
+<A>
+<message To="Mum">Hello</message>
+</A>
+<B>
+<call To="Dad" From="Daughter">Hi!</call>
+</B>
+</root>

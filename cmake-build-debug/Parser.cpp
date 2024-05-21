@@ -114,7 +114,10 @@ void Parser::AddTagToTree(const XmlTag &tag) {
 }
 
 void Parser::AddTextToTree(const std::string &text) {
-    if (curr_tag_ != nullptr && !text.empty()) {
+    if (curr_tag_ == nullptr) {
+        throw ParserException("XML file should start with a root tag.");
+    }
+    if (!text.empty()) {
         curr_tag_->attributes.push_back({"text", text});
     }
 }

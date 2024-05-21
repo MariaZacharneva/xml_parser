@@ -20,7 +20,7 @@ public:
         generator_ = std::make_unique<CSharpGenerator>(output_path);
     }
 
-    void Run() {
+    void Run(bool testing_mode = false) {
         parser_->LoadScanner(scanner_.get());
         try {
             can_read_file_ = scanner_->CanReadFile();
@@ -30,9 +30,24 @@ public:
             }
             generator_->AnalyzeTagTree(parser_->GetRoot());
             generator_->GenerateCode();
-        } catch (std::exception& error) {
+        } catch (ScannerException &exc) {
             // Different handling of differnet expections can be added if necessary.
-            std::cout << "AN ERROR OCCURED.\n" << error.what() << std::endl;
+            std::cout << "AN ERROR OCCURED.\n" << exc.what() << std::endl;
+            if (testing_mode) {
+                throw exc;
+            }
+        } catch (ParserException &exc) {
+            // Different handling of differnet expections can be added if necessary.
+            std::cout << "AN ERROR OCCURED.\n" << exc.what() << std::endl;
+            if (testing_mode) {
+                throw exc;
+            }
+        } catch (std::exception &exc) {
+            // Different handling of differnet expections can be added if necessary.
+            std::cout << "AN ERROR OCCURED.\n" << exc.what() << std::endl;
+            if (testing_mode) {
+                throw exc;
+            }
         }
     }
 

@@ -80,13 +80,13 @@ void CSharpGenerator::GenerateClass(CS_Class &class_) {
     std::string output;
     output += "class " + class_.name + "\n{\n";
     for (const auto &text_field: class_.text_fields) {
-        output += "\tpublic string " + text_field + " {get; set;} \n";
+        output += "\tpublic string " + text_field + " {get; set;}\n";
     }
     for (const auto &[class_name, name]: class_.class_fields) {
         if (class_.unique_class_fields.at(class_name) == 1) {
-            output += "\tpublic " + class_name + " " + name + " {get; set;} \n";
+            output += "\tpublic " + class_name + " " + name + " {get; set;}\n";
         } else if (class_.unique_class_fields.at(class_name) > 1) {
-            output += "\tpublic List<" + class_name + "> " + class_name + "Objects {get; set;} \n";
+            output += "\tpublic List<" + class_name + "> " + class_name + "Objects {get; set;}\n";
             class_.unique_class_fields[class_name] *= -1;
         }
     }
@@ -104,7 +104,7 @@ void CSharpGenerator::GenerateClass(CS_Class &class_) {
     }
     output.pop_back();
     output.pop_back();
-    output += ") {/* TODO */} \n};\n";
+    output += ") {/* TODO */}\n};\n";
     out_file << output;
     out_file.close();
 }
@@ -122,11 +122,17 @@ void CSharpGenerator::GenerateMain() {
 
         for (auto &[name, counter]: class_->unique_class_fields) {
             if (counter > 1) {
-                output += "\t\tList<" + name + "> " + name + "_objects = new List<" + name +
-                        ">(" + std::to_string(counter) + ");\n";
-                for (auto& field : object.object_fields) {
-                    if (field.class_name == name) {
-                        output += "\t\t" + name + "_objects.Add(" + field.object_name + ");\n";
+                int real_counter = std::count_if(object.object_fields.begin(), object.object_fields.end(),
+                                                 [&name](const ObjectField &field) {
+                                                     return field.class_name == name;
+                                                 });
+                if (real_counter > 0) {
+                    output += "\t\tList<" + name + "> " + name + "_objects = new List<" + name +
+                            ">(" + std::to_string(real_counter) + ");\n";
+                    for (auto &field: object.object_fields) {
+                        if (field.class_name == name) {
+                            output += "\t\t" + name + "_objects.Add(" + field.object_name + ");\n";
+                        }
                     }
                 }
             }
@@ -142,21 +148,32 @@ void CSharpGenerator::GenerateMain() {
                 output += field_value + ", ";
             }
         }
+        std::set<std::string> used_class_names;
         for (const auto &class_field: class_->class_fields) {
             auto field = std::find_if(object.object_fields.begin(), object.object_fields.end(),
                                       [&class_field](const ObjectField &item) {
                                           return class_field.class_name == item.class_name && class_field.field_name ==
                                                  item.field_name;
+            });
+            auto potential_fields = std::find_if(object.object_fields.begin(), object.object_fields.end(),
+                                      [&class_field](const ObjectField &item) {
+                                          return class_field.class_name == item.class_name;
                                       });
-            if (field != object.object_fields.end()) {
-                if (class_->unique_class_fields[field->class_name] > 1) {
-                    output += field->class_name + "_objects,";
-                    class_->unique_class_fields[field->class_name] *= -1;
-                } else if (class_->unique_class_fields[field->class_name] == 1) {
+            if (class_->unique_class_fields.at(class_field.class_name) == 1) {
+                if (field != object.object_fields.end()) {
                     output += field->object_name + ", ";
+                } else {
+                    output += "null, ";
                 }
             } else {
-                output += "null, ";
+                if (used_class_names.count(class_field.class_name) == 0) {
+                    if (potential_fields != object.object_fields.end()) {
+                        output += potential_fields->class_name + "_objects, ";
+                    } else {
+                        output += "null, ";
+                    }
+                }
+                used_class_names.insert(class_field.class_name);
             }
         }
         output.pop_back();

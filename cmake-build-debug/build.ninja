@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug
 
 build cmake_object_order_depends_target_xml_parser: phony || CMakeFiles/xml_parser.dir
 
-build CMakeFiles/xml_parser.dir/main.cpp.obj: CXX_COMPILER__xml_parser_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/main.cpp || cmake_object_order_depends_target_xml_parser
-  DEP_FILE = CMakeFiles\xml_parser.dir\main.cpp.obj.d
+build CMakeFiles/xml_parser.dir/parser_main.cpp.obj: CXX_COMPILER__xml_parser_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/parser_main.cpp || cmake_object_order_depends_target_xml_parser
+  DEP_FILE = CMakeFiles\xml_parser.dir\parser_main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\xml_parser.dir
   OBJECT_FILE_DIR = CMakeFiles\xml_parser.dir
@@ -81,7 +81,7 @@ build CMakeFiles/xml_parser.dir/CSharpGenerator.cpp.obj: CXX_COMPILER__xml_parse
 #############################################
 # Link the executable xml_parser.exe
 
-build xml_parser.exe: CXX_EXECUTABLE_LINKER__xml_parser_Debug CMakeFiles/xml_parser.dir/main.cpp.obj CMakeFiles/xml_parser.dir/Scanner.cpp.obj CMakeFiles/xml_parser.dir/Parser.cpp.obj CMakeFiles/xml_parser.dir/CSharpGenerator.cpp.obj
+build xml_parser.exe: CXX_EXECUTABLE_LINKER__xml_parser_Debug CMakeFiles/xml_parser.dir/parser_main.cpp.obj CMakeFiles/xml_parser.dir/Scanner.cpp.obj CMakeFiles/xml_parser.dir/Parser.cpp.obj CMakeFiles/xml_parser.dir/CSharpGenerator.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\xml_parser.dir
@@ -114,8 +114,321 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Masha/CLionProjects/xml_parser/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target GoogleTest_run
+
+
+#############################################
+# Order-only phony target for GoogleTest_run
+
+build cmake_object_order_depends_target_GoogleTest_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/test.cpp.obj: CXX_COMPILER__GoogleTest_run_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/test.cpp || cmake_object_order_depends_target_GoogleTest_run
+  DEP_FILE = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+
+build cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/Scanner.cpp.obj: CXX_COMPILER__GoogleTest_run_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/Scanner.cpp || cmake_object_order_depends_target_GoogleTest_run
+  DEP_FILE = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__\Scanner.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__
+
+build cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/Parser.cpp.obj: CXX_COMPILER__GoogleTest_run_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/Parser.cpp || cmake_object_order_depends_target_GoogleTest_run
+  DEP_FILE = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__\Parser.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__
+
+build cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/CSharpGenerator.cpp.obj: CXX_COMPILER__GoogleTest_run_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/CSharpGenerator.cpp || cmake_object_order_depends_target_GoogleTest_run
+  DEP_FILE = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__\CSharpGenerator.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir\__
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GoogleTest_run
+
+
+#############################################
+# Link the executable cmake-build-debug\GoogleTest\GoogleTest_run.exe
+
+build cmake-build-debug/GoogleTest/GoogleTest_run.exe: CXX_EXECUTABLE_LINKER__GoogleTest_run_Debug cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/test.cpp.obj cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/Scanner.cpp.obj cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/Parser.cpp.obj cmake-build-debug/GoogleTest/CMakeFiles/GoogleTest_run.dir/__/CSharpGenerator.cpp.obj | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g
+  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = cmake-build-debug\GoogleTest\CMakeFiles\GoogleTest_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = cmake-build-debug\GoogleTest\GoogleTest_run.exe
+  TARGET_IMPLIB = cmake-build-debug\GoogleTest\libGoogleTest_run.dll.a
+  TARGET_PDB = GoogleTest_run.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake-build-debug/GoogleTest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build cmake-build-debug/GoogleTest/edit_cache: phony cmake-build-debug/GoogleTest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake-build-debug/GoogleTest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Masha\CLionProjects\xml_parser -BC:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/rebuild_cache: phony cmake-build-debug/GoogleTest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake-build-debug/GoogleTest/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake-build-debug/GoogleTest/CMakeFiles/install.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/install: phony cmake-build-debug/GoogleTest/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake-build-debug/GoogleTest/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/install/local: phony cmake-build-debug/GoogleTest/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake-build-debug/GoogleTest/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/install/strip: phony cmake-build-debug/GoogleTest/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/gtest.dir
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -IC:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest.dir\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library lib\libgtest.a
+
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest.a
+  TARGET_PDB = gtest.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Order-only phony target for gtest_main
+
+build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest/include -isystem C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/GoogleTest/lib/googletest
+  OBJECT_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_FILE_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest_main.dir\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Link the static library lib\libgtest_main.a
+
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj || lib/libgtest.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = cmake-build-debug\GoogleTest\lib\googletest\CMakeFiles\gtest_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest_main.a
+  TARGET_PDB = gtest_main.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build cmake-build-debug/GoogleTest/lib/googletest/edit_cache: phony cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Masha\CLionProjects\xml_parser -BC:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/lib/googletest/rebuild_cache: phony cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake-build-debug/GoogleTest/lib/googletest/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/lib/googletest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/lib/googletest/install: phony cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/lib/googletest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/lib/googletest/install/local: phony cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake-build-debug/GoogleTest/lib/googletest/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Masha\CLionProjects\xml_parser\cmake-build-debug\cmake-build-debug\GoogleTest\lib\googletest && "C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake-build-debug/GoogleTest/lib/googletest/install/strip: phony cmake-build-debug/GoogleTest/lib/googletest/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
+
+build GoogleTest_run: phony cmake-build-debug/GoogleTest/GoogleTest_run.exe
+
+build GoogleTest_run.exe: phony cmake-build-debug/GoogleTest/GoogleTest_run.exe
+
+build gtest: phony lib/libgtest.a
+
+build gtest_main: phony lib/libgtest_main.a
+
+build libgtest.a: phony lib/libgtest.a
+
+build libgtest_main.a: phony lib/libgtest_main.a
 
 build xml_parser: phony xml_parser.exe
 
@@ -127,7 +440,21 @@ build xml_parser: phony xml_parser.exe
 #############################################
 # Folder: C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug
 
-build all: phony xml_parser.exe
+build all: phony xml_parser.exe cmake-build-debug/GoogleTest/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/cmake-build-debug/GoogleTest
+
+build cmake-build-debug/GoogleTest/all: phony cmake-build-debug/GoogleTest/GoogleTest_run.exe cmake-build-debug/GoogleTest/lib/googletest/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Masha/CLionProjects/xml_parser/cmake-build-debug/cmake-build-debug/GoogleTest/lib/googletest
+
+build cmake-build-debug/GoogleTest/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 # Built-in targets
@@ -136,14 +463,14 @@ build all: phony xml_parser.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Users/Masha/CLionProjects/xml_parser/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Masha/CLionProjects/xml_parser/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake GoogleTest/CMakeLists.txt GoogleTest/lib/googletest/CMakeLists.txt GoogleTest/lib/googletest/cmake/Config.cmake.in GoogleTest/lib/googletest/cmake/gtest.pc.in GoogleTest/lib/googletest/cmake/gtest_main.pc.in GoogleTest/lib/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Users/Masha/CLionProjects/xml_parser/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.1.1/bin/cmake/win/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Masha/CLionProjects/xml_parser/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake GoogleTest/CMakeLists.txt GoogleTest/lib/googletest/CMakeLists.txt GoogleTest/lib/googletest/cmake/Config.cmake.in GoogleTest/lib/googletest/cmake/gtest.pc.in GoogleTest/lib/googletest/cmake/gtest_main.pc.in GoogleTest/lib/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################

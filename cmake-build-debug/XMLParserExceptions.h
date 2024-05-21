@@ -32,7 +32,7 @@ public:
     }
 
     char *what() {
-        message_.data();
+        return message_.data();
     }
 
 private:

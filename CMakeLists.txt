@@ -3,7 +3,9 @@ project(xml_parser)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(xml_parser main.cpp
+add_subdirectory(cmake-build-debug/GoogleTest)
+
+add_executable(xml_parser parser_main.cpp
         cmake-build-debug/Controller.h
         cmake-build-debug/Scanner.cpp
         cmake-build-debug/Scanner.h

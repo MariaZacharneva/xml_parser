@@ -1,0 +1,13 @@
+<root>
+<newman Name="John" Surname="Newman" BirthDate="1990-01-01">
+<mother Name="Ann" Surname="Brown" BirthDate="1970-02-02"/>
+</newman>
+<novak Name="Matt" Surname="Novak" BirthDate="2005-11-16">
+<mother Name="mARY" Surname="Novak" BirthDate="1970-02-02"/>
+<father Name="Henry" Surname="Novak" BirthDate="1970-02-02"/>
+</novak>
+<cats>
+<cat1 Name="Tom" Companion="Jerry"/>
+<cat2 Name="Garfield" Companion="Odie"/>
+</cats>
+</root>

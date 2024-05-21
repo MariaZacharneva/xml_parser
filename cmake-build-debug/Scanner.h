@@ -13,8 +13,7 @@
 
 class Scanner {
 public:
-    Scanner(const std::string &xml_input_file) : xml_input_path_(xml_input_file),
-                                                 fin_(xml_input_file, std::fstream::in), curr_symbol_(new char(0)) {
+    Scanner(const std::string &xml_input_file) : fin_(xml_input_file, std::fstream::in), curr_symbol_(new char(0)) {
     }
 
     Token ReadNextToken();
@@ -30,7 +29,6 @@ private:
 
     static bool IsSymbolAllowedInTextFields(char s);
 
-    std::string xml_input_path_;
     std::fstream fin_;
     int line_ = 1;
     int pos_ = 1;
